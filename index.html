@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard IoT Ambiental</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>Plataforma de Monitoreo IoT</h1>
+
+<p>Dashboard inteligente para sensores ambientales</p>
+
+</header>
+
+
+
+
+<div class="contenedor">
+
+
+<section class="resumen">
+
+
+<div class="cuadro">
+<h3>Dispositivos Conectados</h3>
+<strong>25</strong>
+<p>Sensores activos</p>
+</div>
+
+
+<div class="cuadro">
+<h3>Temperatura</h3>
+<strong>27 °C</strong>
+<p>Estado normal</p>
+</div>
+
+
+
+<div class="cuadro">
+<h3>Humedad</h3>
+<strong>65 %</strong>
+<p>Nivel estable</p>
+</div>
+
+
+
+<div class="cuadro">
+<h3>Calidad del Aire</h3>
+<strong>Buena</strong>
+<p>Sin alertas</p>
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="mapa">
+
+<h2>Mapa de estaciones IoT</h2>
+
+<iframe src="https://maps.google.com/maps?q=ecuador&t=&z=5&ie=UTF8&iwloc=&output=embed"></iframe>
+
+
+</section>
+
+
+
+
+
+<h2 class="titulo-seccion">Estado de Sensores</h2>
+
+
+
+<section class="sensores">
+
+
+<div class="sensor">
+
+<h3>ESP32 Nodo 01</h3>
+
+<p>Sensor: DHT22</p>
+
+<p>Temperatura: 26 °C</p>
+
+<p>Humedad: 70 %</p>
+
+<span>Activo</span>
+
+</div>
+
+
+
+
+<div class="sensor">
+
+<h3>ESP32 Nodo 02</h3>
+
+<p>Sensor: BMP280</p>
+
+<p>Presión: 1015 hPa</p>
+
+<p>Temperatura: 28 °C</p>
+
+<span>Activo</span>
+
+</div>
+
+
+
+
+<div class="sensor">
+
+<h3>ESP32 Nodo 03</h3>
+
+<p>Sensor: MQ135</p>
+
+<p>Calidad Aire: Buena</p>
+
+<p>Estado: Normal</p>
+
+<span>Activo</span>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="tabla">
+
+
+<h2>Registro de Datos IoT</h2>
+
+
+<table>
+
+<tr>
+
+<th>Dispositivo</th>
+<th>Sensor</th>
+<th>Valor</th>
+<th>Estado</th>
+
+</tr>
+
+
+
+<tr>
+
+<td>ESP32-01</td>
+<td>DHT22</td>
+<td>26 °C</td>
+<td>Activo</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>ESP32-02</td>
+<td>BMP280</td>
+<td>1015 hPa</td>
+<td>Activo</td>
+
+</tr>
+
+
+
+<tr>
+
+<td>ESP32-03</td>
+<td>MQ135</td>
+<td>Aire Bueno</td>
+<td>Normal</td>
+
+</tr>
+
+
+</table>
+
+
+</section>
+
+
+</div>
+
+
+
+
+
+<footer>
+
+Dashboard IoT Ambiental - Ingeniería Telemática
+
+</footer>
+
+
+
+</body>
+
+</html>
