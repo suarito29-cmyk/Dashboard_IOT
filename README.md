@@ -25,3 +25,5 @@ El proyecto está organizado de la siguiente manera para separar la lógica de m
 ## 🌐 Despliegue en GitHub Pages
 
 Este proyecto se encuentra desplegado en GitHub Pages. Al realizar cualquier actualización en la carpeta `stylesheet/styles.css`, los cambios se verán reflejados de manera automática en la web gracias a la etiqueta de vinculación `<link>`.
+
+Para ver la pagina entrar a: https://suarito29-cmyk.github.io/Dashboard_IOT/
