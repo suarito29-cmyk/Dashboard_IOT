@@ -1,40 +1,27 @@
-Diseño de una Interfaz Web Accesible para Gestión de Dispositivos IoT
+# 🌍 Dashboard IoT - Plataforma de Gestión Ambiental
 
-Ejecución y despliegue del Dashboard IoT
+Este repositorio contiene la estructura visual de la **Plataforma de Gestión y Monitoreo Ambiental OpenAQ**. Fue desarrollado utilizando exclusivamente **HTML5 y CSS3** basándose en un diseño de referencia.
 
-El Dashboard IoT es una aplicación web diseñada para permitir la visualización e interpretación de datos obtenidos desde dispositivos conectados a Internet de las Cosas (IoT). La plataforma permite representar información de sensores mediante una interfaz gráfica, facilitando el monitoreo de variables en tiempo real y la supervisión del estado del sistema.
+## 📁 Estructura del Proyecto
 
-Para ejecutar correctamente el dashboard es necesario contar con los archivos principales del proyecto, los cuales contienen la estructura visual, los estilos de diseño y la lógica de funcionamiento de la interfaz web.
+El proyecto está organizado de la siguiente manera para separar la lógica de marcado del diseño:
 
-📌 Procedimiento de ejecución
+- `index.html`: Archivo principal con la estructura semántica y la división de áreas (Grid/Flexbox).
+- `README.md`: Documentación del proyecto.
+- `stylesheet/`: Carpeta que contiene los estilos.
+  - `styles.css`: Hoja de estilos vinculada de forma dinámica al HTML.
 
-Obtención del proyecto
+## 🚀 Características
 
-El primer paso consiste en descargar el proyecto desde su ubicación de almacenamiento o realizar una clonación del repositorio donde se encuentra alojado. Esto permite disponer de todos los recursos necesarios para el funcionamiento del dashboard.
+- **Diseño Responsivo adaptado a Dashboard:** Layout de tres columnas que incluye un menú lateral, un área central de visualización de datos (KPIs, Mapa y Tablas) y un panel derecho de detalles.
+- **Iconografía:** Uso de la librería de FontAwesome.
+- **Simulación de Componentes IoT:** Interfaz preparada para mostrar telemetría de sensores DHT22 en placas ESP32 (Wokwi).
 
-Carga del proyecto en el entorno de desarrollo
+## 🛠️ Tecnologías Utilizadas
 
-Se debe abrir la carpeta principal del proyecto mediante Visual Studio Code, un editor de código que permite administrar archivos HTML, CSS y otros recursos utilizados para el desarrollo web.
+* HTML5
+* CSS3 (Flexbox & CSS Grid)
 
-Verificación de la estructura del proyecto
+## 🌐 Despliegue en GitHub Pages
 
-Antes de iniciar la ejecución, es importante comprobar que los archivos se encuentren organizados correctamente:
-
-📁 Dashboard-IoT
-│
-├── index.html
-└── styles.css
-index.html: contiene la estructura principal de la página web, incluyendo los elementos visuales del dashboard, paneles de información, gráficos y componentes de monitoreo.
-styles.css: almacena las reglas de diseño encargadas de definir colores, distribución, tamaños, fuentes y apariencia general de la interfaz.
-
-Inicialización de la aplicación web
-
-Una vez verificados los archivos, se procede a abrir el archivo index.html, el cual funciona como punto de entrada del sistema y permite cargar la interfaz desarrollada.
-
-Ejecución mediante Live Server
-
-Para visualizar correctamente el dashboard se utiliza la extensión Live Server de Visual Studio Code. Esta herramienta crea un servidor local que permite ejecutar la aplicación en un navegador web, actualizando automáticamente los cambios realizados durante el desarrollo.
-
-Visualización del Dashboard IoT
-
-Finalmente, el navegador mostrará la interfaz gráfica del sistema, donde el usuario podrá observar los elementos implementados para el monitoreo IoT, como indicadores, tarjetas de información, gráficos y datos provenientes de los dispositivos conectados.
+Este proyecto se encuentra desplegado en GitHub Pages. Al realizar cualquier actualización en la carpeta `stylesheet/styles.css`, los cambios se verán reflejados de manera automática en la web gracias a la etiqueta de vinculación `<link>`.
