@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard IoT · Monitoreo Ambiental (Wokwi/ESP32)</title>
+  <link rel="stylesheet" href="stylesheet/styles.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-icon">IoT</span>
+        <h1>Dashboard IoT</h1>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#" class="activo"><span class="icono">🏠</span> Dashboard</a>
+        <a href="#"><span class="icono">📈</span> Gráfico en línea</a>
+        <a href="#"><span class="icono">🗂️</span> Tarjetas actuales</a>
+        <a href="#"><span class="icono">📶</span> Valores actuales</a>
+        <a href="#"><span class="icono">📋</span> Tablas de datos</a>
+        <a href="#"><span class="icono">⚠️</span> Alertas Activas</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <small>Aplicaciones Telemáticas<br>Basadas en Web</small>
+      </div>
+    </aside>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="main">
+
+      <header class="topbar">
+        <button class="btn-menu" aria-label="Menú">☰</button>
+        <h2>Plataforma de Monitoreo Ambiental IoT · Simulación Wokwi (ESP32)</h2>
+        <div class="topbar-iconos">
+          <span class="icono-notificacion">🔔<span class="badge">2</span></span>
+          <span class="icono-usuario">👤</span>
+        </div>
+      </header>
+
+      <main class="contenedor">
+
+        <!-- ===== TARJETAS RESUMEN ===== -->
+        <section class="seccion">
+          <p class="eyebrow">Dashboard Cards</p>
+          <div class="cards-actuales">
+            <article class="card">
+              <h3>Total de Dispositivos (Wokwi Sim.)</h3>
+              <p class="valor">4</p>
+              <span class="estado normal">Todos en línea</span>
+            </article>
+
+            <article class="card">
+              <h3>Promedio Global de Temperatura</h3>
+              <p class="valor exito">29.4 °C</p>
+              <span class="estado activo">Dentro de rango</span>
+            </article>
+
+            <article class="card">
+              <h3>Alertas Activas</h3>
+              <p class="valor">⚠ 0</p>
+              <span class="estado normal">Sin incidencias</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===== MAPA + TABLA (izq) / PANEL DE DETALLES (der) ===== -->
+        <section class="grid-principal">
+
+          <div class="columna-principal">
+
+            <div class="mapa-contenedor">
+              <div class="mapa-header">
+                <h3>Ubicación de Dispositivos</h3>
+                <button class="btn-fullscreen" aria-label="Pantalla completa">⛶</button>
+              </div>
+              <iframe
+                class="mapa-frame"
+                title="Mapa de dispositivos IoT en Quito, Ecuador"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-78.5578%2C-0.2903%2C-78.3778%2C-0.1203&amp;layer=mapnik&amp;marker=-0.1807%2C-78.4678"
+                loading="lazy">
+              </iframe>
+              <small class="mapa-atribucion">Datos del mapa © colaboradores de OpenStreetMap · Nodo simulado en Wokwi</small>
+            </div>
+
+            <div class="seccion tabla-seccion">
+              <div class="tabla-header">
+                <h2>Tabla de Dispositivos IoT (WOKWI)</h2>
+                <div class="tabla-controles">
+                  <input type="text" class="filtro-input" placeholder="🔍 Filtra por dispositivo o estado">
+                  <button class="btn-filtro" aria-label="Filtrar">▾</button>
+                </div>
+              </div>
+
+              <div class="tabla-contenedor">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Device ID</th>
+                      <th>Ubicación</th>
+                      <th>Sensor</th>
+                      <th>Temperatura</th>
+                      <th>Humedad</th>
+                      <th>Última Transmisión ▾</th>
+                      <th>Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>WOKWI_ESP32_01</td>
+                      <td>Quito, Ecuador</td>
+                      <td>DHT22</td>
+                      <td>28.5 °C</td>
+                      <td>72 %</td>
+                      <td>08/07/2026 09:00:12</td>
+                      <td><span class="estado activo">● Activo</span></td>
+                    </tr>
+                    <tr>
+                      <td>WOKWI_ESP32_02</td>
+                      <td>Quito, Ecuador</td>
+                      <td>DHT22</td>
+                      <td>27.8 °C</td>
+                      <td>70 %</td>
+                      <td>08/07/2026 08:30:47</td>
+                      <td><span class="estado normal">● Normal</span></td>
+                    </tr>
+                    <tr>
+                      <td>WOKWI_ESP32_03</td>
+                      <td>Quito, Ecuador</td>
+                      <td>DHT22</td>
+                      <td>31.2 °C</td>
+                      <td>80 %</td>
+                      <td>08/07/2026 08:00:33</td>
+                      <td><span class="estado medio">● Revisar</span></td>
+                    </tr>
+                    <tr>
+                      <td>WOKWI_ESP32_04</td>
+                      <td>Quito, Ecuador</td>
+                      <td>DHT22</td>
+                      <td>30.1 °C</td>
+                      <td>75 %</td>
+                      <td>08/07/2026 07:45:02</td>
+                      <td><span class="estado activo">● Activo</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ===== PANEL LATERAL DE DETALLES ===== -->
+          <aside class="panel-detalles">
+            <div class="panel-header">
+              <h3>Detalles de la Ubicación</h3>
+              <button class="btn-cerrar" aria-label="Cerrar">✕</button>
+            </div>
+
+            <div class="detalle-item">
+              <span class="detalle-label">Ubicación</span>
+              <p>Quito, Ecuador</p>
+              <small>Simulación Wokwi</small>
+            </div>
+
+            <div class="detalle-item">
+              <span class="detalle-label">Proveedor</span>
+              <p>Red de Sensores ESP32</p>
+            </div>
+
+            <div class="detalle-item">
+              <span class="detalle-label">Tipo de Estación</span>
+              <p>Simulación Wokwi</p>
+            </div>
+
+            <div class="detalle-item">
+              <span class="detalle-label">Sensores Disponibles</span>
+              <ul class="lista-sensores">
+                <li>Temperatura (DHT22)</li>
+                <li>Humedad (DHT22)</li>
+              </ul>
+            </div>
+
+            <div class="graficos-resumidos">
+              <span class="detalle-label">Gráficos Resumidos (Histórico 24h)</span>
+
+              <div class="mini-grafico">
+                <div class="mini-grafico-titulo">Temperatura (DHT22)</div>
+                <div class="barras-chart">
+                  <span style="--h:45%"></span>
+                  <span style="--h:55%"></span>
+                  <span style="--h:50%"></span>
+                  <span style="--h:65%"></span>
+                  <span style="--h:80%"></span>
+                  <span style="--h:70%"></span>
+                  <span style="--h:60%"></span>
+                  <span style="--h:52%"></span>
+                </div>
+                <div class="mini-grafico-eje">
+                  <small>00:00</small><small>12:00</small><small>24:00</small>
+                </div>
+              </div>
+
+              <div class="mini-grafico">
+                <div class="mini-grafico-titulo">Humedad (DHT22)</div>
+                <div class="barras-chart barras-secundarias">
+                  <span style="--h:60%"></span>
+                  <span style="--h:65%"></span>
+                  <span style="--h:58%"></span>
+                  <span style="--h:70%"></span>
+                  <span style="--h:75%"></span>
+                  <span style="--h:68%"></span>
+                  <span style="--h:72%"></span>
+                  <span style="--h:66%"></span>
+                </div>
+                <div class="mini-grafico-eje">
+                  <small>00:00</small><small>12:00</small><small>24:00</small>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+        </section>
+
+      </main>
+
+      <footer>
+        <p>Aplicaciones Telemáticas Basadas en Web — Dashboard IoT · Datos simulados con Wokwi</p>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>
