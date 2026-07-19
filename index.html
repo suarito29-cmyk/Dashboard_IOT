@@ -1,222 +1,193 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dashboard IoT Ambiental</title>
-
-<link rel="stylesheet" href="styles.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Gestión OpenAQ</title>
+    <!-- Conexión al archivo CSS dentro de la carpeta stylesheet -->
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <!-- Librería de íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
-
 <body>
-
-
-<header>
-
-<h1>Plataforma de Monitoreo IoT</h1>
-
-<p>Dashboard inteligente para sensores ambientales</p>
-
-</header>
-
-
-
-
-<div class="contenedor">
-
-
-<section class="resumen">
-
-
-<div class="cuadro">
-<h3>Dispositivos Conectados</h3>
-<strong>25</strong>
-<p>Sensores activos</p>
-</div>
-
-
-<div class="cuadro">
-<h3>Temperatura</h3>
-<strong>27 °C</strong>
-<p>Estado normal</p>
-</div>
-
-
-
-<div class="cuadro">
-<h3>Humedad</h3>
-<strong>65 %</strong>
-<p>Nivel estable</p>
-</div>
-
-
-
-<div class="cuadro">
-<h3>Calidad del Aire</h3>
-<strong>Buena</strong>
-<p>Sin alertas</p>
-</div>
-
-
-</section>
-
-
-
-
-
-<section class="mapa">
-
-<h2>Mapa de estaciones IoT</h2>
-
-<iframe src="https://maps.google.com/maps?q=ecuador&t=&z=5&ie=UTF8&iwloc=&output=embed"></iframe>
-
-
-</section>
-
-
-
-
-
-<h2 class="titulo-seccion">Estado de Sensores</h2>
-
-
-
-<section class="sensores">
-
-
-<div class="sensor">
-
-<h3>ESP32 Nodo 01</h3>
-
-<p>Sensor: DHT22</p>
-
-<p>Temperatura: 26 °C</p>
-
-<p>Humedad: 70 %</p>
-
-<span>Activo</span>
-
-</div>
-
-
-
-
-<div class="sensor">
-
-<h3>ESP32 Nodo 02</h3>
-
-<p>Sensor: BMP280</p>
-
-<p>Presión: 1015 hPa</p>
-
-<p>Temperatura: 28 °C</p>
-
-<span>Activo</span>
-
-</div>
-
-
-
-
-<div class="sensor">
-
-<h3>ESP32 Nodo 03</h3>
-
-<p>Sensor: MQ135</p>
-
-<p>Calidad Aire: Buena</p>
-
-<p>Estado: Normal</p>
-
-<span>Activo</span>
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="tabla">
-
-
-<h2>Registro de Datos IoT</h2>
-
-
-<table>
-
-<tr>
-
-<th>Dispositivo</th>
-<th>Sensor</th>
-<th>Valor</th>
-<th>Estado</th>
-
-</tr>
-
-
-
-<tr>
-
-<td>ESP32-01</td>
-<td>DHT22</td>
-<td>26 °C</td>
-<td>Activo</td>
-
-</tr>
-
-
-
-<tr>
-
-<td>ESP32-02</td>
-<td>BMP280</td>
-<td>1015 hPa</td>
-<td>Activo</td>
-
-</tr>
-
-
-
-<tr>
-
-<td>ESP32-03</td>
-<td>MQ135</td>
-<td>Aire Bueno</td>
-<td>Normal</td>
-
-</tr>
-
-
-</table>
-
-
-</section>
-
-
-</div>
-
-
-
-
-
-<footer>
-
-Dashboard IoT Ambiental - Ingeniería Telemática
-
-</footer>
-
-
-
+    <div class="app-container">
+        
+        <!-- BARRA SUPERIOR -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="topbar-center">
+                <h1>Plataforma de Gestión y Monitoreo Ambiental OpenAQ (Vue.js/React)</h1>
+            </div>
+            <div class="topbar-right">
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">1</span>
+                </div>
+                <i class="fas fa-user-circle user-icon"></i>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- MENÚ LATERAL IZQUIERDO -->
+            <aside class="sidebar">
+                <ul class="nav-links">
+                    <li class="active"><i class="fas fa-th-large"></i> Dashboard</li>
+                    <li><i class="fas fa-list-ul"></i> Gráfico en línea</li>
+                    <li><i class="far fa-address-card"></i> Tarjetas del l...</li>
+                    <li><i class="fas fa-chart-bar"></i> Valores actuales</li>
+                    <li><i class="fas fa-table"></i> Tablas de datos</li>
+                    <li><i class="fas fa-exclamation-triangle"></i> Alertas Activas</li>
+                </ul>
+            </aside>
+
+            <!-- CONTENIDO CENTRAL -->
+            <main class="content">
+                
+                <!-- Tarjetas Superiores (KPIs) -->
+                <div class="dashboard-cards-header">DASHBOARD CARDS</div>
+                <div class="kpi-cards">
+                    <div class="kpi-card">
+                        <div class="kpi-title">Total de Dispositivos (Wokwi Sim.)</div>
+                        <div class="kpi-value text-blue">145</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">Promedio Global del Aire <i class="fas fa-info-circle info-icon"></i></div>
+                        <div class="kpi-value text-green">52 <span class="kpi-unit">índice</span></div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-title">Alertas Activas (Ref: <i class="fas fa-crosshairs"></i>)</div>
+                        <div class="kpi-value text-red"><i class="fas fa-exclamation-triangle"></i> 0</div>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="map-container">
+                    <!-- Usamos una imagen de mapa representativa para igualar el diseño -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/1024px-Earthmap1000x500compac.jpg" alt="Mapa global" class="map-img">
+                </div>
+
+                <!-- Tabla de Dispositivos -->
+                <div class="table-section">
+                    <div class="table-header-bar">
+                        <h2>TABLA DE DISPOSITIVOS IoT (WOKWI)</h2>
+                        <div class="table-filter">
+                            <i class="fas fa-sort-amount-down"></i>
+                            <input type="text" placeholder="Filtra">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Device ID <i class="fas fa-caret-up"></i></th>
+                                <th>Ubicación <i class="fas fa-filter text-muted"></i></th>
+                                <th>Sensor <i class="fas fa-filter text-muted"></i></th>
+                                <th>Última Transmisión (Ref: <i class="fas fa-crosshairs"></i>) <i class="fas fa-filter text-muted"></i></th>
+                                <th>Estado <i class="fas fa-caret-down"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>WOKWI_ESP32_01</td>
+                                <td>Quito, Ecuador</td>
+                                <td>DHT22</td>
+                                <td>21/07/2023 10:32:11</td>
+                                <td><span class="status-dot"></span> Activo</td>
+                            </tr>
+                            <tr>
+                                <td>WOKWI_ESP32_02</td>
+                                <td>Quito, Ecuador</td>
+                                <td>DHT22</td>
+                                <td>21/07/2023 11:32:15</td>
+                                <td><span class="status-dot"></span> Activo</td>
+                            </tr>
+                            <tr>
+                                <td>WOKWI_ESP32_03</td>
+                                <td>Quito, Ecuador</td>
+                                <td>DHT22</td>
+                                <td>21/07/2023 11:32:33</td>
+                                <td><span class="status-dot"></span> Activo</td>
+                            </tr>
+                            <tr>
+                                <td>WOKWI_ESP32_04</td>
+                                <td>Quito, Ecuador</td>
+                                <td>DHT22</td>
+                                <td>21/07/2023 11:32:37</td>
+                                <td><span class="status-dot"></span> Activo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+            <!-- PANEL LATERAL DERECHO -->
+            <aside class="right-panel">
+                <div class="panel-header">
+                    <h2>DETALLES DE LA UBICACIÓN</h2>
+                    <i class="fas fa-times close-icon"></i>
+                </div>
+                <div class="panel-content">
+                    <div class="info-block">
+                        <strong>UBICACIÓN:</strong>
+                        <p>Quito, Ecuador<br>Simulación Wokwi (Ref: <i class="fas fa-crosshairs"></i>)</p>
+                    </div>
+                    <div class="info-block">
+                        <strong>PROVEEDOR:</strong>
+                        <p>Red Nacional de Aire</p>
+                    </div>
+                    <div class="info-block">
+                        <strong>TIPO DE ESTACIÓN:</strong>
+                        <p>Simulación Wokwi (Ref: <i class="fas fa-crosshairs"></i>)</p>
+                    </div>
+                    <div class="info-block">
+                        <strong>SENSORES DISPONIBLES:</strong>
+                        <ul>
+                            <li>Temperatura (DHT22)</li>
+                            <li>Humedad (DHT22)</li>
+                            <li>Calidad del Aire (Multi)</li>
+                        </ul>
+                    </div>
+                    <div class="info-block charts-block">
+                        <strong>GRÁFICOS RESUMIDOS (Histórico 24h):</strong>
+                        
+                        <div class="chart-placeholder">
+                            <span>Temperatura (DHT22)</span>
+                            <div class="bars">
+                                <div class="bar" style="height: 60%;"></div>
+                                <div class="bar" style="height: 70%;"></div>
+                                <div class="bar" style="height: 65%;"></div>
+                                <div class="bar" style="height: 80%;"></div>
+                                <div class="bar" style="height: 90%; background-color: #f59e0b;"></div>
+                                <div class="bar" style="height: 75%;"></div>
+                            </div>
+                            <div class="chart-labels"><span>00:00</span><span>08:00</span><span>16:00</span><span>24:00</span></div>
+                        </div>
+
+                        <div class="chart-placeholder">
+                            <span>Humedad (DHT22)</span>
+                            <div class="line-chart"></div>
+                            <div class="chart-labels"><span>00:00</span><span>08:00</span><span>16:00</span><span>24:00</span></div>
+                        </div>
+
+                        <div class="chart-placeholder">
+                            <span>Calidad del Aire (Multi)</span>
+                            <div class="bars">
+                                <div class="bar" style="height: 30%; background-color: #f59e0b;"></div>
+                                <div class="bar" style="height: 40%; background-color: #3b82f6;"></div>
+                                <div class="bar" style="height: 80%; background-color: #f59e0b;"></div>
+                                <div class="bar" style="height: 50%; background-color: #10b981;"></div>
+                                <div class="bar" style="height: 90%; background-color: #f59e0b;"></div>
+                                <div class="bar" style="height: 45%; background-color: #3b82f6;"></div>
+                            </div>
+                            <div class="chart-labels"><span>08:00</span><span>12:00</span><span>16:00</span><span>24:00</span></div>
+                        </div>
+
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
 </body>
-
 </html>
